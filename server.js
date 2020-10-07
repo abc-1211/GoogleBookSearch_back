@@ -23,7 +23,7 @@ app.use(cors());
 app.use('/api', router);
 
 // Conect to MongoDB using mongoose
-mongoose.connect('mongodb://localhost/googleBooksDB', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/googleBooksDB', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }, () => {
